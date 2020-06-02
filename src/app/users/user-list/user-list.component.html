@@ -1,0 +1,103 @@
+
+
+
+<div class="container-fluid">
+   <div class="row">
+    <div class="col">
+      <h4>Фильтр</h4>
+      <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="searchName"
+      placeholder="Введите данные">
+    
+    </div>
+  </div> 
+<br>
+   
+
+  
+
+<!-- 
+    <table mat-table [dataSource]="userData" matSort id = "table">
+      
+      <ng-container matColumnDef="#">
+        <mat-header-cell  *matHeaderCellDef mat-sort-header   >#</mat-header-cell>
+        <mat-cell *matCellDef="let user "> {{user.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Name">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let user "> {{user.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Surname">
+        <mat-header-cell  *matHeaderCellDef mat-sort-header click="getData()">Surname</mat-header-cell>
+        <mat-cell *matCellDef="let user "> {{user.surname}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="Age">
+        <mat-header-cell  mat-sort-header *matHeaderCellDef>Age</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.years}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Type">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.type}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <mat-header-cell *matHeaderCellDef >
+          <button mat-button class="btn btn-primary" (click)="onAddProfile()" style="width:230px;">
+          Добавить пользователя
+        </button> </mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <button mat-button class="btn btn-primary" (click)="onLinkProfile(user.id)">
+            Редактировать
+          </button>
+          <button mat-button class="btn btn-danger" *ngIf="user.id != null" (click)="onDelete(user)">
+            Удалить
+          </button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row   *matHeaderRowDef = "displayedColumns" color="primary"> </mat-header-row>
+      <mat-row *matRowDef ="let row;columns:displayedColumns"> </mat-row>
+        
+      </table> -->
+
+
+      
+    <table id="table" class="tablesorter">
+      <thead>
+        <tr>
+          <th scope="col-3"style="cursor: pointer;">#</th>
+          <th scope="col-3" data-sort-method='none'>Имя</th>
+          <th scope="col-3" data-sort-method='none'>Фамилия</th>
+          <th scope="col-3" style="cursor: pointer;" >Возраст</th>
+          <th scope="col-3" data-sort-method='none'>Отдел</th>
+          <th  scope="col" style = "text-align: center;">
+            <button class="btn btn-primary" (click)="onAddProfile()">
+              Добавить пользователя
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | myfilter:searchName">
+          <td scope="row">{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.surname }}</td>
+          <td>{{user.years}} </td>
+          <td> {{user.type}} </td>
+          <td style = "text-align: center;">
+            <button class="btn btn-primary" (click)="onLinkProfile(user.id)">
+              Информация
+            </button>
+            <button mat-button class="btn btn-danger" *ngIf="user.id != null" (click)="onDelete(user)">
+              Удалить
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,54 @@
+{
+  "musers": [
+    {
+      "name": "Andre",
+      "surname": "Ivanov",
+      "years": "1978-12-23",
+      "number": "+76565656888",
+      "email": "andre@mail.ru",
+      "patronymic": "Андреич",
+      "type": "Доставка",
+      "id": 2
+    },
+    {
+      "name": "Дмитрий",
+      "surname": "Лисицын",
+      "years": "1995-06-19",
+      "number": "+79042185293",
+      "email": "LisitsynDmtr@gmail.com",
+      "patronymic": "Андреевич",
+      "type": "Юридический",
+      "id": 3
+    },
+    {
+      "name": "Василий ",
+      "surname": "Васильев",
+      "years": "1977-11-11",
+      "number": "+12312312313",
+      "email": "Diksdakdwo@mail.ru",
+      "patronymic": "Васильевич",
+      "type": "Продажи",
+      "id": 4
+    },
+    {
+      "name": "Александр",
+      "surname": "Александров ",
+      "years": "1988-11-11",
+      "number": "+21312312312",
+      "email": "1@mail.ru",
+      "patronymic": "Александрович",
+      "type": "Доставка",
+      "id": 5
+    },
+    {
+      "name": "Владимир",
+      "surname": "Путин",
+      "years": "2000-12-31",
+      "number": "+13213123123",
+      "email": "putin@mail.ru",
+      "patronymic": "Владимирович",
+      "type": "IT",
+      "id": 6
+    }
+  ]
+}

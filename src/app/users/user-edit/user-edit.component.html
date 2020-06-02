@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <form [formGroup]="userForm">
+    <div class="form-group">
+      <label for="usersurname">Фамилия</label>
+      <input
+        type="text"
+        class="form-control"
+        id="usersurname"
+        placeholder="Фамилия"
+        formControlName="surname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="username">Имя</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Имя"
+        formControlName="name"
+      />
+    </div>
+   
+    <div class="form-group">
+      <label for="userpatronymic">Отчество</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userpatronymic"
+        placeholder="Отчетсво"
+        formControlName="patronymic"
+      />
+    </div>
+    <div class="form-group">
+      <label for="useryears">Дата Рождения</label>
+      <input
+        type="date"
+        class="form-control"
+        id="useryears"
+        formControlName="years"
+      />
+    </div>
+    <div class="form-group">
+      <label for="usernumber">Телефон</label>
+      <input [textMask]="{mask: mask}" class="form-control" placeholder="Телефон" formControlName="number" />
+    </div>
+    <div class="form-group">
+      <label for="useremail">E-mail</label>
+      <input type="email"
+        class="form-control"
+        id="useremail"
+        #Mail
+        placeholder="example@mail.ru"
+        formControlName="email"
+      />
+      <div *ngIf="(userForm.get('email').touched && userForm.get('email').invalid)">
+        <small class="text-danger">Введите корректный адрес электронной почты</small>
+      </div>
+    </div>
+    
+    
+    <div class="form-group" >
+      <label for="type">Отдел</label>
+      <select class="custom-select" id="type"  formControlName="type">
+        <option value = "IT" >IT</option>
+        <option value= "Продажи" >Отдел Продаж</option>
+        <option value = "Доставка">Отдел Доставки</option>
+        <option value = "Юридический">Юридический</option>
+      </select>
+    
+    </div>
+    <div class="form-gropup">
+   
+      <button class="btn btn-primary mr-4" [disabled]="userForm.invalid" (click)="onSave()">
+        Сохранить
+      </button>
+
+      <button class="btn btn-danger" *ngIf="user.id != null" (click)="onDelete()" [routerLink]="'/users'">
+        Удалить
+      </button>
+      <button class="btn btn-success"  [routerLink]="'/users'" style="margin-left:20px;">
+        Вернуться
+      </button>
+   
+  </div>
+   
+  </form>
+</div>

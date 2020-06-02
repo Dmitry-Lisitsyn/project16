@@ -1,0 +1,18 @@
+{
+  "musers": [
+    {
+      "name": "Ivan",
+      "surname": "Ivanov",
+      "id": 1,
+      "type": 0,
+      "years": 28
+    },
+    {
+      "name": "sfkdgsdkfa",
+      "surname": "Ivanov",
+      "id": 2,
+      "type" : 1 , 
+      "years": 35
+    }
+  ]
+}
